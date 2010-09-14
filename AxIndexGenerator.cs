@@ -9,7 +9,6 @@ namespace Kofax.Eclipse.AxRelease
     class AxIndexGenerator : IDocumentIndexGenerator
     {
         private static readonly Guid guid = new Guid("{22589961-4AA2-4c1b-8EB4-23F1A5254C3A}");
-        private ReleaseMode m_ReleaseMode;
 
         #region Settings
         public void SerializeSettings(Stream output)
@@ -74,7 +73,6 @@ namespace Kofax.Eclipse.AxRelease
                                                       FileAccess.Write, FileShare.None))
             using (StreamWriter writer = new StreamWriter(stream, Encoding.ASCII))
             {
-                //There has to be a better way to prevent the pipe at the end of the string
                 for (int i = 0; i < document.IndexDataCount; i++)
                     index += string.Format("{0}|", document.GetIndexDataValue(i));
 
@@ -88,15 +86,7 @@ namespace Kofax.Eclipse.AxRelease
             }
         }
 
-        public ReleaseMode WorkingMode
-        {
-            get { return m_ReleaseMode; }
-            set 
-            {
-                m_ReleaseMode = value;
-               
-            }
-        }
+        public ReleaseMode WorkingMode { get; set; }
 
         #endregion
     }
