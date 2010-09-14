@@ -70,14 +70,11 @@ namespace Kofax.Eclipse.AxRelease
             }
 
             option_Single.Checked = workingMode == ReleaseMode.SinglePage;
-
+            option_Multi.Checked = workingMode == ReleaseMode.MultiPage;
+            
             //Removed ability to customize the amount of files per directory
-            //Removed multipage support
-            //option_Multi.Checked = workingMode == ReleaseMode.MultiPage;
             label_ImageCount.Hide();
             textbox_MaxImages.Hide();
-            option_Multi.Hide();
-
         }
 
         private void combo_FileType_SelectedIndexChanged(object sender, EventArgs e)
