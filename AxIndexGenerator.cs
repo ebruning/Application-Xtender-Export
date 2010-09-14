@@ -68,7 +68,7 @@ namespace Kofax.Eclipse.AxRelease
 
         public void CreateIndex(IDocument document, IDictionary<string, string> releaseData, string outputFileName)
         {
-            string index = "";
+            string index = string.Empty;
 
             using (FileStream stream = new FileStream(outputFileName, FileMode.Append, 
                                                       FileAccess.Write, FileShare.None))
@@ -76,14 +76,9 @@ namespace Kofax.Eclipse.AxRelease
             {
                 //There has to be a better way to prevent the pipe at the end of the string
                 for (int i = 0; i < document.IndexDataCount; i++)
-                {
-                    if (i == 0)
-                        index += document.GetIndexDataValue(i);
-                    else
-                        index += "|" + document.GetIndexDataValue(i);
-                }
+                    index += string.Format("{0}|", document.GetIndexDataValue(i));
 
-                writer.WriteLine(index);
+                writer.WriteLine(index.TrimEnd('|'));
 
                 foreach (KeyValuePair<string, string> file in releaseData)
                 {
@@ -92,7 +87,6 @@ namespace Kofax.Eclipse.AxRelease
                 writer.Flush();
                 writer.Close();
             }
-            
         }
 
         public ReleaseMode WorkingMode
