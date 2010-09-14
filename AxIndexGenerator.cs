@@ -81,9 +81,8 @@ namespace Kofax.Eclipse.AxRelease
                 writer.WriteLine(index.TrimEnd('|'));
 
                 foreach (KeyValuePair<string, string> file in releaseData)
-                {
                     writer.WriteLine("@{0}", file.Value);
-                }
+                
                 writer.Flush();
                 writer.Close();
             }
