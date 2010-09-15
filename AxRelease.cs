@@ -341,8 +341,7 @@ namespace Kofax.Eclipse.AxRelease
             m_DocFolder = Path.Combine(m_BatchFolder, m_DocFolderCount.ToString().PadLeft(5, '0'));
 
             //Moved this to Release(IPage) since we are only releasing single pages and allows us to keep track of the number if images
-            bool docFolderCreated = !Directory.Exists(m_DocFolder);
-            if (docFolderCreated)
+            if (!Directory.Exists(m_DocFolder))
                 Directory.CreateDirectory(m_DocFolder); 
         }
     }
