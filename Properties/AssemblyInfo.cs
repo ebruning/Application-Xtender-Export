@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AxRelease")]
-[assembly: AssemblyDescription("A very simple release script. Provided as an educational sample for Kofax Express release SDK development.")]
+[assembly: AssemblyDescription("A very simple export connector to create importing files for ApplicationXtender")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Kofax, Inc.")]
 [assembly: AssemblyProduct("Kofax Express")]
-[assembly: AssemblyCopyright("Copyright © Kofax Image Products 2007")]
+[assembly: AssemblyCopyright("Copyright © Kofax, Inc. 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

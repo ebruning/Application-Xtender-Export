@@ -25,7 +25,7 @@ namespace Kofax.Eclipse.AxRelease
         /// </summary>
         public string Name
         {
-            get { return "ApplicationXtender Release"; }
+            get { return "ApplicationXtender Export"; }
         }
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace Kofax.Eclipse.AxRelease
         /// </summary>
         public string Description
         {
-            get { return "Release script for ApplicationXtender."; }
+            get { return "Export connector for ApplicationXtender."; }
         }
 
         /// <summary>
