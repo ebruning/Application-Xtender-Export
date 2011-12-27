@@ -41,9 +41,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Kofax.Eclipse.Base, Version=2.0.44.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Kofax.Eclipse.Base, Version=2.0.86.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files\Kofax\Kofax Express\bin\Kofax.Eclipse.Base.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Kofax\Kofax Express\bin\Kofax.Eclipse.Base.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
