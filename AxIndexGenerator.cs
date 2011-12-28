@@ -10,6 +10,11 @@ namespace Kofax.Eclipse.AxRelease
     {
         private static readonly Guid guid = new Guid("{22589961-4AA2-4c1b-8EB4-23F1A5254C3A}");
 
+        public AxIndexGenerator(ReleaseMode mode)
+        {
+            WorkingMode = mode;
+        }
+
         #region Settings
         public void SerializeSettings(Stream output)
         {
@@ -57,7 +62,8 @@ namespace Kofax.Eclipse.AxRelease
 
         public bool IsSupported(ReleaseMode mode)
         {
-            return mode == ReleaseMode.SinglePage;
+            //return mode == ReleaseMode.SinglePage;
+            return true;
         }
 
         public void SerializeSample(IDictionary<string, string> releaseData, Stream output)
@@ -74,15 +80,14 @@ namespace Kofax.Eclipse.AxRelease
             using (StreamWriter writer = new StreamWriter(stream, Encoding.ASCII))
             {
                 for (int i = 0; i < document.IndexDataCount; i++)
-                    index += string.Format("{0}|", document.GetIndexDataValue(i));
-
-                writer.WriteLine(index.TrimEnd('|'));
+                    index += string.Format("{0},", document.GetIndexDataValue(i));
 
                 foreach (KeyValuePair<string, string> file in releaseData)
                     if (WorkingMode == ReleaseMode.SinglePage)
-                        writer.WriteLine("@{0}", file.Value);
+                        writer.WriteLine(string.Format("{0}@{1}", index.TrimEnd(','), file.Value));
                     else
-                        writer.WriteLine(file.Value);
+                        writer.WriteLine(string.Format("{0}@@{1}", index.TrimEnd(','), file.Value));
+
 
                 writer.Flush();
                 writer.Close();

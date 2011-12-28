@@ -140,8 +140,8 @@ namespace Kofax.Eclipse.AxRelease
 
             m_DocConverter = null;
             m_PageConverter = null;
-            
-            index = new AxIndexGenerator();
+
+            index = new AxIndexGenerator(m_WorkingMode);
 
             foreach (IExporter exporter in exporters)
             {
