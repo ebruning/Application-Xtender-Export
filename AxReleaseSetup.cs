@@ -200,5 +200,14 @@ namespace Kofax.Eclipse.AxRelease
                         combo_FileType.SelectedIndex = m_DocConverters.IndexOf(docConverter);
                 }
         }
+
+        private void button_BrowseIndexFilename_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+
+            if (dialog.ShowDialog() != DialogResult.OK) return;
+
+            textbox_IndexFileName.Text = dialog.FileName;
+        }
     }
 }

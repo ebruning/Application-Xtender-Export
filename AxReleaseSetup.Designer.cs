@@ -43,6 +43,7 @@ namespace Kofax.Eclipse.AxRelease
             this.textbox_IndexFileName = new System.Windows.Forms.TextBox();
             this.label_ImageCount = new System.Windows.Forms.Label();
             this.textbox_MaxImages = new System.Windows.Forms.TextBox();
+            this.button_BrowseIndexFilename = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label_Destination
@@ -115,7 +116,7 @@ namespace Kofax.Eclipse.AxRelease
             // button_OK
             // 
             this.button_OK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_OK.Location = new System.Drawing.Point(234, 177);
+            this.button_OK.Location = new System.Drawing.Point(234, 187);
             this.button_OK.Name = "button_OK";
             this.button_OK.Size = new System.Drawing.Size(70, 23);
             this.button_OK.TabIndex = 6;
@@ -127,7 +128,7 @@ namespace Kofax.Eclipse.AxRelease
             // 
             this.button_Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button_Cancel.Location = new System.Drawing.Point(310, 177);
+            this.button_Cancel.Location = new System.Drawing.Point(310, 187);
             this.button_Cancel.Name = "button_Cancel";
             this.button_Cancel.Size = new System.Drawing.Size(70, 23);
             this.button_Cancel.TabIndex = 7;
@@ -173,7 +174,7 @@ namespace Kofax.Eclipse.AxRelease
             // 
             this.textbox_IndexFileName.Location = new System.Drawing.Point(15, 138);
             this.textbox_IndexFileName.Name = "textbox_IndexFileName";
-            this.textbox_IndexFileName.Size = new System.Drawing.Size(166, 20);
+            this.textbox_IndexFileName.Size = new System.Drawing.Size(289, 20);
             this.textbox_IndexFileName.TabIndex = 11;
             // 
             // label_ImageCount
@@ -182,7 +183,7 @@ namespace Kofax.Eclipse.AxRelease
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.label_ImageCount.AutoSize = true;
             this.label_ImageCount.Enabled = false;
-            this.label_ImageCount.Location = new System.Drawing.Point(199, 121);
+            this.label_ImageCount.Location = new System.Drawing.Point(12, 161);
             this.label_ImageCount.Name = "label_ImageCount";
             this.label_ImageCount.Size = new System.Drawing.Size(124, 13);
             this.label_ImageCount.TabIndex = 12;
@@ -191,10 +192,21 @@ namespace Kofax.Eclipse.AxRelease
             // textbox_MaxImages
             // 
             this.textbox_MaxImages.Enabled = false;
-            this.textbox_MaxImages.Location = new System.Drawing.Point(202, 138);
+            this.textbox_MaxImages.Location = new System.Drawing.Point(15, 178);
             this.textbox_MaxImages.Name = "textbox_MaxImages";
             this.textbox_MaxImages.Size = new System.Drawing.Size(121, 20);
             this.textbox_MaxImages.TabIndex = 13;
+            // 
+            // button_BrowseIndexFilename
+            // 
+            this.button_BrowseIndexFilename.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_BrowseIndexFilename.Location = new System.Drawing.Point(310, 137);
+            this.button_BrowseIndexFilename.Name = "button_BrowseIndexFilename";
+            this.button_BrowseIndexFilename.Size = new System.Drawing.Size(70, 20);
+            this.button_BrowseIndexFilename.TabIndex = 14;
+            this.button_BrowseIndexFilename.Text = "&Browse";
+            this.button_BrowseIndexFilename.UseVisualStyleBackColor = true;
+            this.button_BrowseIndexFilename.Click += new System.EventHandler(this.button_BrowseIndexFilename_Click);
             // 
             // AxReleaseSetup
             // 
@@ -202,7 +214,8 @@ namespace Kofax.Eclipse.AxRelease
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button_Cancel;
-            this.ClientSize = new System.Drawing.Size(392, 214);
+            this.ClientSize = new System.Drawing.Size(392, 224);
+            this.Controls.Add(this.button_BrowseIndexFilename);
             this.Controls.Add(this.textbox_MaxImages);
             this.Controls.Add(this.label_ImageCount);
             this.Controls.Add(this.textbox_IndexFileName);
@@ -243,5 +256,6 @@ namespace Kofax.Eclipse.AxRelease
         private System.Windows.Forms.TextBox textbox_IndexFileName;
         private System.Windows.Forms.Label label_ImageCount;
         private System.Windows.Forms.TextBox textbox_MaxImages;
+        private System.Windows.Forms.Button button_BrowseIndexFilename;
     }
 }
